@@ -1,0 +1,14 @@
+- name: Install mariadb
+  become: yes
+  dnf:
+    name:
+    - mariadb
+
+# TODO add a db user and setup a password
+
+# - name: Start mysql service
+#   become: yes
+#   ansible.builtin.systemd:
+#     name: mariadb
+#     enabled: yes
+#     state: started

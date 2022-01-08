@@ -1,0 +1,11 @@
+- name: Install tmux
+  become: yes
+  dnf:
+    name: tmux
+
+- name: Install oh-my-tmux
+  ansible.builtin.git:
+    repo: https://github.com/gpakosz/.tmux.git
+    dest: ~/.tmux
+# execute "ln -s -f .tmux/.tmux.conf"
+

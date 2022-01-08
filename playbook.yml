@@ -1,0 +1,21 @@
+- hosts: all
+  vars_files: vars.yml
+  remote_user: "{{ username }}"
+  tasks:
+    # install iosevka
+    # install wallpapers
+    - include: tasks/tools/dotfiles.yml
+    - include: tasks/system.yml
+    - include: tasks/gui.yml
+    - include: tasks/tools/ruby.yml
+    - include: tasks/tools/node.yml
+    - include: tasks/tools/tmux.yml
+    - include: tasks/tools/kmonad.yml
+    - include: tasks/tools/git.yml
+    - include: tasks/tools/neovim.yml
+    # - include: tasks/tools/postgres.yml
+    - include: tasks/tools/mysql.yml
+    - include: tasks/tools/redis.yml
+    # - include: tasks/docker.yml
+    # - include: tasks/elasticsearch.yml
+    - include: tasks/hostname.yml

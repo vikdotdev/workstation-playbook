@@ -1,0 +1,38 @@
+- name: Install GUI apps
+  become: yes
+  dnf:
+    name:
+    - thunderbird
+    - deluge
+
+# - name: Add the flathub flatpak repository remote to the user installation
+#   community.general.flatpak_remote:
+#     name: flathub
+#     state: present
+#     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+# - name: Install teams flatpak
+#   become: yes
+#   community.general.flatpak:
+#     name: com.microsoft.Teams
+
+# - name: Install spotify flatpak
+#   become: yes
+#   community.general.flatpak:
+#     name: com.spotify.Client
+
+- name: Install skype flatpak
+  become: yes
+  community.general.flatpak:
+    name: com.skype.Client
+
+- name: Install zoom flatpak
+  become: yes
+  community.general.flatpak:
+    name: us.zoom.Zoom
+
+# - name: Install telegram flatpak
+#   become: yes
+#   community.general.flatpak:
+#     name: org.telegram.desktop
+

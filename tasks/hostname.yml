@@ -1,0 +1,5 @@
+- name: Set a hostname
+  become: yes
+  ansible.builtin.hostname:
+    # name: "{{ hostname }}"
+    name: vm1

@@ -1,0 +1,31 @@
+- name: Install neovim
+  become: yes
+  dnf:
+    name: neovim
+
+# - name: Sync neovim plugins
+#   # This is not correct
+#   shell: nvim --headless -c 'quitall'
+
+- name: Install npm dependencies for neovim
+  ansible.builtin.shell: "npm install -g {{ item }}"
+  # TODO add created for each
+  loop:
+    - js-beautify
+    - stylelint
+    - marked
+    - vscode-json-languageserver
+    - bash-language-server
+    # no bin
+    - vscode-langservers-extracted
+    - sql-language-server
+    - yaml-language-server
+    # no bin
+    - dockerfile-language-server-nodejs
+    - diagnostic-languageserver
+
+- name: Install denojs
+  # TODO change to docker?
+  ansible.builtin.shell: curl -fsSL https://deno.land/x/install/install.sh | sh
+  args:
+    creates: ~/.deno/bin/deno

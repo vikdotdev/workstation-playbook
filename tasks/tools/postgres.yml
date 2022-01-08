@@ -1,0 +1,7 @@
+# - name: Install postgresql
+#   become: yes
+#   dnf:
+#     name:
+#     - postgresql
+
+# TODO add a db user and setup a password

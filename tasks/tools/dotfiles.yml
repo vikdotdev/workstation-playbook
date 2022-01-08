@@ -1,0 +1,78 @@
+- name: Install dotfiles deps
+  become: yes
+  dnf:
+    name:
+    - stow
+- name: Install dotfiles
+  ansible.builtin.git:
+    repo: https://github.com/vikdotdev/dotfiles.git
+    dest: ~/repos/dotfiles
+
+- name: checking if the file .profile exists
+  stat:
+    path: ~/.profile
+  register: profile
+
+- name: Preserve default .profile
+  ansible.builtin.shell: mv ~/.profile ~/.profile.default
+  args:
+    creates: ~/.profile.default
+  when: profile.stat.exists and not profile.stat.islnk
+
+- name: checking if the file .bash_profile exists
+  stat:
+    path: ~/.bash_profile
+  register: bash_profile
+
+- name: Preserve default .bash_profile
+  ansible.builtin.shell: mv ~/.bash_profile ~/.bash_profile.default
+  args:
+    creates: ~/.bash_profile.default
+  when: bash_profile.stat.exists and not bash_profile.stat.islnk
+
+- name: checking if the file .bashrc exists
+  stat:
+    path: ~/.bashrc
+  register: bashrc
+
+- name: Preserve default .bashrc
+  ansible.builtin.shell: mv ~/.bashrc ~/.bashrc.default
+  args:
+    creates: ~/.bashrc.default
+  when: bashrc.stat.exists and not bashrc.stat.islnk
+
+- name: checking if the file .inputrc exists
+  stat:
+    path: ~/.inputrc
+  register: inputrc
+
+- name: Preserve default .inputrc
+  ansible.builtin.shell: mv ~/.inputrc ~/.inputrc.default
+  args:
+    creates: ~/.inputrc.default
+  when: inputrc.stat.exists and not inputrc.stat.islnk
+
+- name: Checking if the file user-dirs.dirs exists
+  stat:
+    path: ~/.config/user-dirs.dirs
+  register: user_dirs
+
+- name: Delete .config/user-dirs.dirs
+  file:
+    state: absent
+    path: ~/.config/user-dirs.dirs
+  when: user_dirs.stat.exists and not user_dirs.stat.islnk
+
+- name: Checking if the file user-dirs.locale exists
+  stat:
+    path: ~/.config/user-dirs.locale
+  register: user_locale
+
+- name: Delete .config/user-dirs.locale
+  file:
+    state: absent
+    path: ~/.config/user-dirs.locale
+  when: user_locale.stat.exists and not user_locale.stat.islnk
+
+- name: Sync the dotfiles
+  ansible.builtin.shell: export EXT_XDG_DOTFILES_DIR=~/repos/dotfiles; ~/repos/dotfiles/bin/bin/util-dotfiles

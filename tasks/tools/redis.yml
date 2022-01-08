@@ -1,0 +1,12 @@
+- name: Install redis
+  become: yes
+  dnf:
+    name:
+    - redis
+
+- name: Start redis service
+  become: yes
+  ansible.builtin.systemd:
+    name: redis
+    enabled: yes
+    state: started
