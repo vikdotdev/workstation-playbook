@@ -4,6 +4,7 @@
   remote_user: "{{ username }}"
   tasks:
     - include: tasks/system/fonts.yml
+    - include: tasks/system/keyboard.yml
     - include: tasks/system/wallpaper.yml
     - include: tasks/tools/dotfiles.yml
     - include: tasks/system/core.yml
