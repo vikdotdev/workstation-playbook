@@ -1,0 +1,18 @@
+- name: Install syncthing
+  become: yes
+  dnf:
+    name:
+    - syncthing
+
+# does not work
+- name: Start Syncthing service
+  ansible.builtin.systemd:
+    name: "syncthing"
+    enabled: yes
+    state: started
+    scope: user
+
+# TODO configure ignore patterns?
+
+# TODO notify client that more configuration is required
+# https://docs.syncthing.net/intro/getting-started.html

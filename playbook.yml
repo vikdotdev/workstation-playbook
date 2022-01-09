@@ -1,16 +1,25 @@
-- hosts: all
-  vars_files: vars.yml
+- hosts: "{{ var_hosts }}"
+  vars_files:
+  - vars.yml
   remote_user: "{{ username }}"
   tasks:
-    # install iosevka
-    # install wallpapers
+    - include: tasks/system/fonts.yml
+    - include: tasks/system/wallpaper.yml
     - include: tasks/tools/dotfiles.yml
-    - include: tasks/system.yml
-    - include: tasks/gui.yml
+    - include: tasks/system/core.yml
+    - include: tasks/system/redshift.yml
+    - include: tasks/system/syncthing.yml
+    - include: tasks/gui/core.yml
+    - include: tasks/gui/flatpaks.yml
     - include: tasks/tools/ruby.yml
+    - include: tasks/tools/lua.yml
     - include: tasks/tools/node.yml
     - include: tasks/tools/tmux.yml
-    - include: tasks/tools/kmonad.yml
+
+    - name: Install kmonad?
+      include_tasks: tasks/tools/kmonad.yml
+      when: install_kmonad
+
     - include: tasks/tools/git.yml
     - include: tasks/tools/neovim.yml
     # - include: tasks/tools/postgres.yml
@@ -18,4 +27,10 @@
     - include: tasks/tools/redis.yml
     # - include: tasks/docker.yml
     # - include: tasks/elasticsearch.yml
+
+    # - name: Install laptop backlight?
+    #   include_tasks: tasks/backlight.yml
+    #   when: laptop_backlight
+
+    # - include: tasks/lightdm.yml
     - include: tasks/hostname.yml

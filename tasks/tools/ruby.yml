@@ -23,6 +23,7 @@
     url: https://get.rvm.io
     dest: ~/rvm.temp
 
+# TODO clean RVM and Ruby sections
 - name: install rvm
   shell: cat rvm.temp | bash -s stable
   # this might break stuff

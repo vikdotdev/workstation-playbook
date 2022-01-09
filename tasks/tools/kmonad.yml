@@ -32,6 +32,9 @@
   shell: >
     echo uinput > /etc/modules-load.d/uinput.conf
 
+# This seems to be needed because uinput isn't compiled as a loadable module these days.
+# See https://github.com/chrippa/ds4drv/issues/93#issuecomment-265300511
+
 # udevadm control --reload-rules ; udevadm trigger
 # modprobe --first-time uinput -- this command was failing before reboot https://github.com/kmonad/kmonad/issues/160
 # this will fail, reboot is needed or some fancy command
