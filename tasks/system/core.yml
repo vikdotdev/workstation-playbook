@@ -42,4 +42,6 @@
     - aspell
     - aspell-en
     - akmod-nvidia
-    - alacritty
+    - xset
+    - feh
+    - pulseaudio-utils
