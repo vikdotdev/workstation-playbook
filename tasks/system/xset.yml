@@ -1,0 +1,12 @@
+- name: Install xset
+  become: yes
+  dnf:
+    name:
+    - xset
+
+- name: Start xset service
+  ansible.builtin.systemd:
+    name: xset
+    enabled: yes
+    state: started
+    scope: user

@@ -1,0 +1,12 @@
+- name: Install imwheel
+  become: yes
+  dnf:
+    name:
+    - imwheel
+
+- name: Start imwheel service
+  ansible.builtin.systemd:
+    name: imwheel
+    enabled: yes
+    state: started
+    scope: user

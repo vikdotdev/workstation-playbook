@@ -8,6 +8,8 @@
     - include: tasks/tools/dotfiles.yml
     - include: tasks/system/core.yml
     - include: tasks/system/redshift.yml
+    - include: tasks/system/xset.yml
+    - include: tasks/system/imwheel.yml
     - include: tasks/system/syncthing.yml
     - include: tasks/gui/core.yml
     - include: tasks/gui/flatpaks.yml

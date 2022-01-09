@@ -18,7 +18,6 @@
     name:
     - '@Multimedia'
     - vim
-    - imwheel
     - wget
     - unzip
     - xclip
@@ -42,6 +41,5 @@
     - aspell
     - aspell-en
     - akmod-nvidia
-    - xset
     - feh
     - pulseaudio-utils
