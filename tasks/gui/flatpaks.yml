@@ -1,5 +1,4 @@
 - name: Add the flathub flatpak repository remote to the user installation
-  become: yes
   community.general.flatpak_remote:
     method: user
     name: flathub
@@ -7,37 +6,31 @@
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: Install teams flatpak
-  become: yes
   community.general.flatpak:
     method: user
     name: com.github.IsmaelMartinez.teams_for_linux
 
 - name: Install spotify flatpak
-  become: yes
   community.general.flatpak:
     method: user
     name: com.spotify.Client
 
 - name: Install skype flatpak
-  become: yes
   community.general.flatpak:
     method: user
     name: com.skype.Client
 
 - name: Install zoom flatpak
-  become: yes
   community.general.flatpak:
     method: user
     name: us.zoom.Zoom
 
 - name: Install telegram flatpak
-  become: yes
   community.general.flatpak:
     method: user
     name: org.telegram.desktop
 
 - name: Install discord flatpak
-  become: yes
   community.general.flatpak:
     method: user
     name: com.discordapp.Discord
