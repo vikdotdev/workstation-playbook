@@ -1,0 +1,12 @@
+- name: Install redshift
+  become: yes
+  dnf:
+    name:
+    - redshift
+
+- name: Start Redshift service
+  ansible.builtin.systemd:
+    name: redshift
+    enabled: yes
+    state: started
+    scope: user

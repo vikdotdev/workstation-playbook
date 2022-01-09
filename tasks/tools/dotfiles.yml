@@ -76,3 +76,20 @@
 
 - name: Sync the dotfiles
   ansible.builtin.shell: export EXT_XDG_DOTFILES_DIR=~/repos/dotfiles; ~/repos/dotfiles/bin/bin/util-dotfiles
+
+- name: Set XDG folders
+  ansible.builtin.shell: xdg-user-dirs-update
+
+- name: Clear old XDG folders
+  file:
+    name: "{{ item }}"
+    state: absent
+  loop:
+  - Downloads
+  - Desktop
+  - Documents
+  - Music
+  - Pictures
+  - Public
+  - Templates
+  - Videos

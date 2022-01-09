@@ -1,0 +1,6 @@
+- name: Install core GUI apps
+  become: yes
+  dnf:
+    name:
+    - thunderbird
+    - deluge

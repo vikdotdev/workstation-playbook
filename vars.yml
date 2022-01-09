@@ -1,5 +1,7 @@
+var_hosts: vms
 username: vik
 hostname: umbra
+install_kmonad: no
+laptop_backlight: no
 rubies:
-- 3.0.0
 - 2.7.2

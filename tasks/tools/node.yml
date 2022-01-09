@@ -28,4 +28,6 @@
         - 17.3.0
 
 - name: Install yarn
-  ansible.builtin.shell: npm install -g yarn
+  community.general.npm:
+    name: yarn
+    global: yes

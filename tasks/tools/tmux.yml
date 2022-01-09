@@ -7,5 +7,10 @@
   ansible.builtin.git:
     repo: https://github.com/gpakosz/.tmux.git
     dest: ~/.tmux
-# execute "ln -s -f .tmux/.tmux.conf"
+
+- name: Make a tmux link
+  file:
+    src: ~/.tmux/.tmux.conf
+    dest: ~/.tmux.conf
+    state: link
 

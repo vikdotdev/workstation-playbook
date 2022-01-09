@@ -1,0 +1,10 @@
+- name: Create .fonts folder
+  file:
+    name: ~/.fonts
+    state: directory
+
+- name: Install Iosevka font family
+  ansible.builtin.unarchive:
+    src: https://github.com/be5invis/Iosevka/releases/download/v11.2.6/ttf-iosevka-curly-11.2.6.zip
+    dest: ~/.fonts/
+    remote_src: yes

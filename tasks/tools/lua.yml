@@ -1,0 +1,10 @@
+- name: Create sumneko_lua folder
+  file:
+    name: ~/.local/bin/sumneko_lua
+    state: directory
+
+- name: Install sumneko_lua
+  ansible.builtin.unarchive:
+    src: https://github.com/sumneko/lua-language-server/releases/download/2.5.6/lua-language-server-2.5.6-linux-x64.tar.gz
+    dest: ~/.local/bin/sumneko_lua
+    remote_src: yes

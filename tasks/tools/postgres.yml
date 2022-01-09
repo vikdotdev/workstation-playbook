@@ -5,3 +5,11 @@
 #     - postgresql
 
 # TODO add a db user and setup a password
+# https://docs.ansible.com/ansible/latest/collections/community/postgresql/index.html
+# dnf install -y postgresql-server postgresql-contrib libpq-devel"
+# systemctl enable postgresql"
+# postgresql-setup --initdb --unit postgresql"
+# systemctl start postgresql"
+# -u postgres createuser $USER -s"
+# createdb
+# -u postgres psql -c \"ALTER USER $USER WITH PASSWORD 'password';\""

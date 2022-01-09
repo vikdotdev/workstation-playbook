@@ -1,0 +1,45 @@
+- name: Install rpmfusion repositories
+  become: yes
+  dnf:
+    disable_gpg_check: yes
+    name:
+    - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+    - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+
+- name: Update system
+  become: yes
+  dnf:
+    name: '*'
+    state: latest
+
+- name: Install core workstation packages
+  become: yes
+  dnf:
+    name:
+    - '@Multimedia'
+    - vim
+    - imwheel
+    - wget
+    - unzip
+    - xclip
+    - curl
+    - clang
+    - sensible-utils
+    - xdotool
+    - screenkey
+    - compton
+    - redshift
+    - urlview
+    - xbacklight
+    - playerctl
+    - ncdu
+    - tldr
+    - peek
+    - awesome
+    - rofi
+    - ripgrep
+    - fd-find
+    - aspell
+    - aspell-en
+    - akmod-nvidia
+    - alacritty

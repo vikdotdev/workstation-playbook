@@ -1,0 +1,4 @@
+- name: Create wallpaper folder
+  file:
+    name: ~/.local/share/wallpapers
+    state: directory
