@@ -43,3 +43,5 @@
     - akmod-nvidia
     - feh
     - pulseaudio-utils
+    - xinput
+    - xrandr
