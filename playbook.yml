@@ -28,12 +28,5 @@
     # - include: tasks/tools/postgres.yml
     - include: tasks/tools/mysql.yml
     - include: tasks/tools/redis.yml
-    # - include: tasks/docker.yml
-    # - include: tasks/elasticsearch.yml
-
-    # - name: Install laptop backlight?
-    #   include_tasks: tasks/backlight.yml
-    #   when: laptop_backlight
-
-    # - include: tasks/lightdm.yml
+    - include: tasks/tools/docker.yml
     - include: tasks/hostname.yml
