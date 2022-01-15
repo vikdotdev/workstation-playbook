@@ -2,6 +2,6 @@ var_hosts: localhost
 username: vik
 hostname: umbra
 install_kmonad: no
-laptop_backlight: no
+install_intel_backlight: no
 rubies:
 - 2.7.2

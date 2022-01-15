@@ -30,3 +30,7 @@
     - include: tasks/tools/redis.yml
     - include: tasks/tools/docker.yml
     - include: tasks/hostname.yml
+
+    - name: Install laptop backlight?
+      include_tasks: tasks/backlight.yml
+      when: install_intel_backlight
