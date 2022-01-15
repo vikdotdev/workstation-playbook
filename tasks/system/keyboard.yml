@@ -1,2 +1,0 @@
-- name: change keyboard layout
-  shell: setxkbmap -layout us,ua
