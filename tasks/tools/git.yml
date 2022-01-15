@@ -1,3 +1,8 @@
+- name: Add repo for Github command line utility
+  become: yes
+  ansible.builtin.shell: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+  warn: no
+
 - name: Install git and git-related tools
   become: yes
   dnf:
@@ -5,12 +10,4 @@
     - git
     - git-credential-libsecret
     - git-delta
-
-- name: Add repo for Github command line utility
-  become: yes
-  dnf:
-    # ansible.builtin.shell: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-    # is this good?
-    enablerepo: https://cli.github.com/packages/rpm/gh-cli.repo
-    name: gh
-
+    - gh
