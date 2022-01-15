@@ -45,3 +45,5 @@
     - pulseaudio-utils
     - xinput
     - xrandr
+    - task
+    - ImageMagick
