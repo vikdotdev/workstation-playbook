@@ -17,3 +17,14 @@ investigate. This command will bypass that ssh check ansible does.
 ```
 export ANSIBLE_HOST_KEY_CHECKING=False
 ```
+# TODO
+fix source for rvm and node
+fix kmonad kernel module permissions
+```
+
+sudo usermod -aG input $USER 
+sudo groupadd uinput
+sudo usermod -aG uinput $USER
+
+echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/90-uinput.rules
+```
