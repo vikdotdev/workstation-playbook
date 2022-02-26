@@ -25,7 +25,7 @@
 
 # TODO clean RVM and Ruby sections
 - name: install rvm
-  shell: cat rvm.temp | bash -s stable
+  shell: cat ~/rvm.temp | bash -s stable
   # this might break stuff
   # args:
   #   creates: ~/.rvm/scripts/rvm
