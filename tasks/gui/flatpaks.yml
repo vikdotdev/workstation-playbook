@@ -35,3 +35,8 @@
     method: user
     name: com.discordapp.Discord
 
+- name: Install Signal flatpak
+  community.general.flatpak:
+    method: user
+    name: org.signal.Signal
+
