@@ -1,9 +1,11 @@
 - name: Ensure 20-intel.conf does not exist
+  become: yes
   stat:
     path: /etc/X11/xorg.conf.d/20-intel.conf
   register: x11_intel_config
 
 - name: Creating a file with content
+  become: yes
   copy:
     dest: /etc/X11/xorg.conf.d/20-intel.conf
     content: |
@@ -12,4 +14,4 @@
           Driver      "intel"
           Option      "Backlight"  "intel_backlight"
       EndSection
-  when: x11_intel_config.stat.exists
+  when: not x11_intel_config.stat.exists

@@ -4,6 +4,10 @@
 sudo dnf install ansible -y
 ansible-galaxy collection install community.general
 ```
+## Usage
+```
+ansible-playbook -K playbook.yml
+```
 
 ## Configuration
 Go to vars.yml file and configure it appropriately.
@@ -22,7 +26,7 @@ fix source for rvm and node
 fix kmonad kernel module permissions
 ```
 
-sudo usermod -aG input $USER 
+sudo usermod -aG input $USER
 sudo groupadd uinput
 sudo usermod -aG uinput $USER
 
