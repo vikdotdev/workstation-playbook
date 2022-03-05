@@ -1,0 +1,13 @@
+- name: Check whether evm is installed
+  become: yes
+  stat:
+    path: /usr/local/bin/evm
+  register: evm
+
+- name: Download evm
+  become: yes
+  get_url:
+    url:  https://raw.githubusercontent.com/duydo/evm/master/evm
+    dest: /usr/local/bin/evm
+    mode: '+x'
+  when: not evm.stat.exists
