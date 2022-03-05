@@ -5,6 +5,6 @@
   roles:
     - { role: rvm.ruby,
         tags: ruby,
-        rvm1_rubies: ['ruby-2.7.5'],
+        rvm1_rubies: "{{ rubies }}",
         rvm1_user: "{{ username }}"
       }
