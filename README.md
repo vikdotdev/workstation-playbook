@@ -13,6 +13,7 @@ ansible-playbook -K playbook.yml
 Go to vars.yml file and configure it appropriately.
 
 # Post-installation
+- reboot
 - configure dark theme and fonts in lxappearance
 
 # Helper commands
@@ -21,6 +22,7 @@ investigate. This command will bypass that ssh check ansible does.
 ```
 export ANSIBLE_HOST_KEY_CHECKING=False
 ```
+
 # TODO
 fix source for rvm and node
 fix kmonad kernel module permissions
