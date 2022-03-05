@@ -1,0 +1,10 @@
+- name: RVM and Ruby
+  vars_files:
+  - "../vars.yml"
+  hosts: "{{ var_hosts }}"
+  roles:
+    - { role: rvm.ruby,
+        tags: ruby,
+        rvm1_rubies: ['ruby-2.7.5'],
+        rvm1_user: "{{ username }}"
+      }

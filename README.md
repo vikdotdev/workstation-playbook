@@ -3,10 +3,11 @@
 ```
 sudo dnf install ansible -y
 ansible-galaxy collection install community.general
+ansible-galaxy install rvm.ruby
 ```
 ## Usage
 ```
-ansible-playbook -K playbook.yml
+ansible-playbook -K main.yml
 ```
 
 ## Configuration
@@ -25,7 +26,7 @@ export ANSIBLE_HOST_KEY_CHECKING=False
 ```
 
 # TODO
-fix source for rvm and node
+fix source for node
 
 # Potentially useful commands
 udevadm control --reload-rules
