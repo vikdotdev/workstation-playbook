@@ -3,10 +3,17 @@
   dnf:
     name:
     - stow
-- name: Install dotfiles
+
+- name: Register dotfiles repo
+  stat:
+    path: ~/repos/dotfiles
+  register: dotfiles_repo
+
+- name: Fetch dotfiles repo
   ansible.builtin.git:
     repo: https://github.com/vikdotdev/dotfiles.git
     dest: ~/repos/dotfiles
+  when: not dotfiles_repo.stat.exists
 
 - name: checking if the file .profile exists
   stat:

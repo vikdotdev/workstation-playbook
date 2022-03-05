@@ -1,0 +1,20 @@
+- name: System
+  hosts: "{{ var_hosts }}"
+  vars_files:
+  - "../vars.yml"
+  remote_user: "{{ username }}"
+  tasks:
+    - include: ../tasks/tools/dotfiles.yml
+    - include: ../tasks/system/fonts.yml
+    - include: ../tasks/system/wallpaper.yml
+    - include: ../tasks/system/core.yml
+    - include: ../tasks/system/redshift.yml
+    - include: ../tasks/system/xset.yml
+    - include: ../tasks/system/imwheel.yml
+    - include: ../tasks/system/syncthing.yml
+    - include: ../tasks/system/hostname.yml
+
+    - name: Install laptop backlight?
+      include_tasks: ../tasks/system/backlight.yml
+      when: install_intel_backlight
+
