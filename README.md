@@ -14,6 +14,7 @@ Go to vars.yml file and configure it appropriately.
 
 # Post-installation
 - reboot
+- configure syncthing https://docs.syncthing.net/intro/getting-started.html
 - configure dark theme and fonts in lxappearance
 
 # Helper commands
