@@ -1,7 +1,8 @@
 - name: Add repo for Github command line utility
   become: yes
-  ansible.builtin.shell: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-  warn: no
+  ansible.builtin.shell:
+    cmd: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+    warn: no
 
 - name: Install git and git-related tools
   become: yes
