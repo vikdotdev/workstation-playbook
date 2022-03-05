@@ -12,6 +12,7 @@
       Section "Device"
           Identifier  "Intel Graphics"
           Driver      "intel"
-          Option      "Backlight"  "intel_backlight"
+          Option      "Backlight" "intel_backlight"
+          Option      "TearFree" "true"
       EndSection
   when: not x11_intel_config.stat.exists
