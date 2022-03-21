@@ -30,6 +30,7 @@ export ANSIBLE_HOST_KEY_CHECKING=False
 
 # TODO
 fix source for nvm
+add xss-lock
 
 # Potentially useful commands
 udevadm control --reload-rules
