@@ -15,7 +15,6 @@
     - js-beautify
     - stylelint
     - marked
-    - vscode-json-languageserver
     - bash-language-server
     - vscode-langservers-extracted
     - sql-language-server
