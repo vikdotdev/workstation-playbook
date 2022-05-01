@@ -8,6 +8,7 @@
     - include: ../tasks/tools/lua.yml
     - include: ../tasks/tools/node.yml
     - include: ../tasks/tools/tmux.yml
+    - include: ../tasks/tools/zk.yml
 
     - name: Install kmonad?
       include_tasks: ../tasks/tools/kmonad.yml

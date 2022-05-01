@@ -1,0 +1,28 @@
+- name: Install zk deps
+  become: yes
+  dnf:
+    name:
+    - libicu-devel
+
+- name: Register zk repo
+  stat:
+    path: ~/repos/zk
+  register: zk_repo
+
+- name: Clone zk
+  ansible.builtin.git:
+    repo: https://github.com/mickael-menu/zk
+    dest: ~/repos/zk
+  when: not zk_repo.stat.exists
+
+- name: Register zk executable
+  stat:
+    path: ~/.local/bin/zk
+  register: zk_executable
+
+- name: Build zk
+  shell: make install
+  args:
+    chdir: ~/repos/zk
+    creates: ~/.local/bin/zk
+  when: not zk_executable.stat.exists
