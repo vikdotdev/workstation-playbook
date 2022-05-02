@@ -20,11 +20,6 @@
     method: user
     name: com.skype.Client
 
-- name: Install zoom flatpak
-  community.general.flatpak:
-    method: user
-    name: us.zoom.Zoom
-
 - name: Install telegram flatpak
   community.general.flatpak:
     method: user
