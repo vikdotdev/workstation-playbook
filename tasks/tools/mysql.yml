@@ -3,6 +3,7 @@
   dnf:
     name:
     - mariadb
+    - mariadb-devel
 
 # TODO add a db user and setup a password
 
