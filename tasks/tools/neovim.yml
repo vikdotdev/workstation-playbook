@@ -1,11 +1,48 @@
-- name: Install neovim
+- name: Install neovim build dependencies
   become: yes
   dnf:
-    name: neovim
+    name:
+    - ninja-build
+    - libtool
+    - autoconf
+    - automake
+    - cmake
+    - gcc
+    - gcc-c++
+    - make
+    - pkgconfig
+    - unzip
+    - patch
+    - gettext
+    - curl
 
-# - name: Sync neovim plugins
-#   # This is not correct
-#   shell: nvim --headless -c 'quitall'
+- name: Register neovim repo
+  stat:
+    path: "$EXT_XDG_REPOS_DIR/neovim"
+  register: neovim_repo
+
+- name: Clone neovim
+  ansible.builtin.git:
+    repo: https://github.com/neovim/neovim
+    depth: 50
+    version: stable
+    dest: "$EXT_XDG_REPOS_DIR/neovim"
+  when: not neovim_repo.stat.exists
+
+- name: Pull latest neovim
+  ansible.builtin.shell: >
+    git checkout stable
+    git pull
+  args:
+    chdir: "$EXT_XDG_REPOS_DIR/neovim"
+
+- name: Build neovim from source
+  become: yes
+  make:
+    chdir: /home/vik/repos/neovim
+    target: install
+    params:
+      CMAKE_BUILD_TYPE: Release
 
 - name: Install npm dependencies for neovim
   community.general.npm:
@@ -27,3 +64,7 @@
   ansible.builtin.shell: curl -fsSL https://deno.land/x/install/install.sh | sh
   args:
     creates: ~/.deno/bin/deno
+
+- name: Run packer sync
+  ansible.builtin.shell: "nvim +PackerSync +qall"
+
