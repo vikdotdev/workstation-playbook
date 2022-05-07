@@ -48,3 +48,5 @@
     - task
     - ImageMagick
     - renameutils
+    - xss-lock
+    - xsecurelock
