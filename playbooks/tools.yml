@@ -4,7 +4,6 @@
   - "../vars.yml"
   remote_user: "{{ username }}"
   tasks:
-    - include: ../tasks/tools/dotfiles.yml
     - include: ../tasks/tools/lua.yml
     - include: ../tasks/tools/node.yml
     - include: ../tasks/tools/tmux.yml
@@ -21,4 +20,5 @@
     - include: ../tasks/tools/mysql.yml
     - include: ../tasks/tools/redis.yml
     - include: ../tasks/tools/docker.yml
+    - include: ../tasks/tools/dotfiles.yml
 
