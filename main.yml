@@ -1,5 +1,5 @@
-- name: Install rvm and ruby
-  import_playbook: playbooks/ruby.yml
+# - name: Install rvm and ruby
+#   import_playbook: playbooks/ruby.yml
 
 - name: Install tools
   import_playbook: playbooks/tools.yml

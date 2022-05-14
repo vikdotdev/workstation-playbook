@@ -82,7 +82,7 @@
   when: user_locale.stat.exists and not user_locale.stat.islnk
 
 - name: Sync the dotfiles
-  ansible.builtin.shell: export EXT_XDG_DOTFILES_DIR=~/repos/dotfiles; ~/repos/dotfiles/bin/bin/util-dotfiles
+  ansible.builtin.shell: export EXT_XDG_DOTFILES_DIR=~/repos/dotfiles; ~/repos/dotfiles/bin/dot build
 
 - name: Set XDG folders
   ansible.builtin.shell: xdg-user-dirs-update
