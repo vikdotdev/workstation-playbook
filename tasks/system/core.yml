@@ -17,6 +17,7 @@
   dnf:
     name:
     - '@Multimedia'
+    - '@base-x'
     - vim
     - wget
     - unzip
@@ -50,3 +51,4 @@
     - renameutils
     - xss-lock
     - xsecurelock
+    - bat

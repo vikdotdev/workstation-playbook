@@ -10,6 +10,9 @@ ansible-galaxy install rvm.ruby
 ansible-playbook -K main.yml
 ```
 
+add ruby script to fill vars and run ansible
+install ruby by hand?
+
 ## Configuration
 Go to vars.yml file and configure it appropriately.
 
@@ -36,3 +39,26 @@ add xss-lock
 udevadm control --reload-rules
 udevadm trigger
 modprobe --first-time uinput
+
+# fedora minimal things to do
+setfont laratcyrheb-sub32.psfu.gz
+
+# what dotfiles might need to do to compete with ansible
+enable flathub remote
+install flatpaks
+install rpms
+write to /etc
+enable repos
+installing packages
+downloading and unpacking
+settings hostname
+enabling user service?
+creating folders
+unarchive
+add usergroups
+add user to group
+chmod
+make
+nvm
+npm packages
+symlink
