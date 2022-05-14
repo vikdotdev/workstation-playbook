@@ -33,9 +33,9 @@
     path: ~/notes
   register: notes_repo
 
-- name: Clone notes
-  ansible.builtin.git:
-    repo: https://github.com/vikdotdev/notes
-    dest: ~/notes
-  when: not notes_repo.stat.exists
-
+  # - name: Clone notes
+  #   ansible.builtin.git:
+  #     repo: https://github.com/vikdotdev/notes
+  #     dest: ~/notes
+  #   when: not notes_repo.stat.exists
+  # 

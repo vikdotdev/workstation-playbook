@@ -18,7 +18,7 @@
 
 - name: Register neovim repo
   stat:
-    path: "$EXT_XDG_REPOS_DIR/neovim"
+    path: ~/repos/neovim
   register: neovim_repo
 
 - name: Clone neovim
@@ -26,13 +26,12 @@
     repo: https://github.com/neovim/neovim
     depth: 50
     version: stable
-    dest: "$EXT_XDG_REPOS_DIR/neovim"
+    dest: ~/repos/neovim
   when: not neovim_repo.stat.exists
 
 - name: Pull latest neovim
   ansible.builtin.shell: >
     git checkout stable
-    git pull
   args:
     chdir: "$EXT_XDG_REPOS_DIR/neovim"
 

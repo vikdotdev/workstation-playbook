@@ -52,3 +52,5 @@
     - xss-lock
     - xsecurelock
     - bat
+    - acpi
+    - xdg-user-dirs

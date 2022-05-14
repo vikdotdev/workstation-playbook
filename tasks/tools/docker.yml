@@ -35,30 +35,30 @@
     warn: no
   when: docker_cli_repo.stdout == 0
 
-- name: Install docker
-  become: yes
-  dnf:
-    name:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
-
-- name: Start docker service
-  become: yes
-  ansible.builtin.systemd:
-    name: docker
-    enabled: yes
-    state: started
-
-- name: Add docker usergroup
-  become: yes
-  ansible.builtin.group:
-    name: docker
-    state: present
-
-- name: Add user to docker usergroup
-  become: yes
-  ansible.builtin.user:
-    name: "{{ username }}"
-    append: yes
-    groups: docker
+  # - name: Install docker
+  #   become: yes
+  #   dnf:
+  #     name:
+  #     - docker-ce
+  #     - docker-ce-cli
+  #     - containerd.io
+  # 
+  # - name: Start docker service
+  #   become: yes
+  #   ansible.builtin.systemd:
+  #     name: docker
+  #     enabled: yes
+  #     state: started
+  # 
+  # - name: Add docker usergroup
+  #   become: yes
+  #   ansible.builtin.group:
+  #     name: docker
+  #     state: present
+  # 
+  # - name: Add user to docker usergroup
+  #   become: yes
+  #   ansible.builtin.user:
+  #     name: "{{ username }}"
+  #     append: yes
+  #     groups: docker

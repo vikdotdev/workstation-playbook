@@ -27,6 +27,7 @@
     creates: ~/.local/bin/kmonad
   when: not kmonad_executable.stat.exists
 
+    # TODO does not work
 - name: Add user to input and uinput groups
   become: yes
   shell: |
@@ -39,6 +40,7 @@
     path: /etc/udev/rules.d/90-uinput.rules
   register: uinput_rules
 
+    # TODO does not work
 - name: Creating a file with content
   become: yes
   copy:
