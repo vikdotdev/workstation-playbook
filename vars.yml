@@ -1,0 +1,5 @@
+var_hosts: localhost
+username: vik
+hostname: reddwarf
+install_kmonad: yes
+install_intel_backlight: yes

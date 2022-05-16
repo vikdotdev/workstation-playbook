@@ -4,9 +4,9 @@
     name:
     - xset
 
-- name: Start xset service
-  ansible.builtin.systemd:
-    name: xset
-    enabled: yes
-    state: started
-    scope: user
+# - name: Start xset service
+#   ansible.builtin.systemd:
+#     name: xset
+#     enabled: yes
+#     state: started
+#     scope: user
